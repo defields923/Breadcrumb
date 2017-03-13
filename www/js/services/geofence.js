@@ -22,7 +22,7 @@ angular.module('ionic-geofence').factory('Geofence', function (
         transitionType: TransitionType.ENTER,
         notification: {
           id: this.getNextNotificationId(),
-          title: 'Ionic geofence example',
+          title: 'You\'ve found a crumb!!!',
           text: '',
           icon: 'res://ic_menu_mylocation',
           openAppOnClick: true,
@@ -85,7 +85,7 @@ angular.module('ionic-geofence').factory('Geofence', function (
     addOrUpdate(geofence) {
       const self = this;
 
-      return $window.geofence.addOrUpdate(geofence).then(function () {
+      return $window.geofence.addOrUpdate(geofence).then(() => {
         const searched = self.findById(geofence.id);
 
         if (!searched) {
@@ -101,9 +101,7 @@ angular.module('ionic-geofence').factory('Geofence', function (
     },
 
     findById(id) {
-      const geoFences = this._geofences.filter(function (g) {
-        return g.id === id;
-      });
+      const geoFences = this._geofences.filter(g => g.id === id);
 
       if (geoFences.length > 0) {
         return geoFences[0];
