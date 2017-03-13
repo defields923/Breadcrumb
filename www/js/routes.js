@@ -88,9 +88,12 @@ angular.module('breadcrumb').config(function ($stateProvider, $urlRouterProvider
     })
     .state('app.geofence-edit', {
       url: '/geofence/:geofenceId',
-      templateUrl: 'views/geofence/geofence.html',
-      controller: 'GeofenceCtrl',
-
+      views: {
+        menuContent: {
+          templateUrl: 'views/geofence/geofence.html',
+          controller: 'GeofenceCtrl',
+        },
+      },
       resolve: {
         geofence($stateParams, Geofence, $q) {
           const geofence = Geofence.findById($stateParams.geofenceId);

@@ -39,7 +39,7 @@ angular.module('breadcrumb').controller('GeofencesCtrl', function (
   };
 
   $scope.editGeofence = (geofence) => {
-    $state.go('geofence-edit', { geofenceId: geofence.id, });
+    $state.go('app.geofence-edit', { geofenceId: geofence.id });
   };
 
   $scope.removeGeofence = (geofence) => {
