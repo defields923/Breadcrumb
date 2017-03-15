@@ -9,6 +9,9 @@
   </author>
   <content src="index.html"/>
   <access origin="*.openstreetmap.org"/>
+  <access origin="http://*.google.com"/>
+  <access origin="https://*.microsoft.com" />
+  <access origin="http://172.24.2.41:5000/picture/labels" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

@@ -1,6 +1,6 @@
 // Ionic Geofence example App
 
-angular.module('ionic-geofence', ['ionic', 'leaflet-directive'])
+angular.module('ionic-geofence', ['ionic', 'leaflet-directive', 'ngCordova'])
 .run(function (
   $window,
   $document,
