@@ -1,4 +1,4 @@
-angular.module('ionic-geofence').controller('CameraCtrl', function (
+angular.module('breadcrumb').controller('CameraCtrl', function (
   $scope
 ) {
   $scope.takePicture = () => {

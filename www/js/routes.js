@@ -1,19 +1,21 @@
 angular.module('breadcrumb').config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('start', {
+      url: '/start',
+      templateUrl: 'views/start.html',
+      controller: 'AuthCtrl',
+    })
+    .state('signUp', {
+      url: '/sign-up',
+      templateUrl: 'views/signup.html',
+      controller: 'AuthCtrl',
+    })
     .state('app', {
       url: '/app',
       abstract: true,
       templateUrl: 'views/menu.html',
       controller: 'AppCtrl',
-    })
-    .state('app.start', {
-      url: '/start',
-      views: {
-        menuContent: {
-          templateUrl: 'views/start.html',
-          controller: 'GeofencesCtrl',
-        },
-      },
+      authenticate: true,
     })
     .state('app.dashboard', {
       url: '/dashboard',
@@ -39,15 +41,6 @@ angular.module('breadcrumb').config(function ($stateProvider, $urlRouterProvider
         menuContent: {
           templateUrl: 'views/profile.html',
           controller: 'ProfileCtrl',
-        },
-      },
-    })
-    .state('app.signUp', {
-      url: '/sign-up',
-      views: {
-        menuContent: {
-          templateUrl: 'views/signup.html',
-          controller: 'AuthCtrl',
         },
       },
     })
@@ -116,5 +109,5 @@ angular.module('breadcrumb').config(function ($stateProvider, $urlRouterProvider
       },
     });
 
-  $urlRouterProvider.otherwise('/app/dashboard');
+  $urlRouterProvider.otherwise('/start');
 });

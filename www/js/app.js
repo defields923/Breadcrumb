@@ -10,6 +10,7 @@ angular.module('breadcrumb', ['ionic', 'ionic.contrib.ui.tinderCards', 'leaflet-
   $log,
   $rootScope,
   GeofencePluginMock
+  // AuthService
 ) {
   $ionicPlatform.ready(function () {
     $log.log('Ionic ready');
@@ -70,8 +71,6 @@ angular.module('breadcrumb', ['ionic', 'ionic.contrib.ui.tinderCards', 'leaflet-
     $window.geofence.initialize(() => {
       $log.log('Geofence plugin initialized');
     });
-
-    Parse.initialize("YOUR APP ID", "JAVASCRIPT KEY");
   });
 
   $rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {

@@ -1,5 +1,4 @@
 /* eslint no-bitwise: ["error", { "allow": ["^=", "&"] }] */
-/* global TransitionType */
 
 angular.module('breadcrumb')
 .controller('ProfileCtrl', function ($scope) {
@@ -10,8 +9,8 @@ angular.module('breadcrumb')
     totalTime: 0,
     trail: {
       name: `My ${Math.floor(Math.random() * 100)}th trail`,
-      stars: _.range(4),
-      nostars: _.range(1),
+      stars: [1, 2, 3, 4],
+      nostars: [1],
       progress: `${Math.floor(Math.random() * 100)}%`,
     },
   };
@@ -24,19 +23,19 @@ angular.module('breadcrumb')
     return {
       name: `Trail ${Math.floor(Math.random() * 100)}`,
       transport: tran,
-      stars: _.range(stars),
-      nostars: _.range(noStars),
-      difficulty: _.range(difficulty),
+      stars: [1, 2, 3, 4],
+      nostars: [1],
+      difficulty: [1, 2, 3],
       length: (Math.floor(Math.random() * 5) + 2) * tran,
       progress: `${Math.floor(Math.random() * 100)}%`,
     };
   };
 
-  $scope.stars = () => _.range($scope.trail.rating);
+  $scope.stars = () => [1, 2, 3, 4];
 
-  $scope.nostars = () => _.range(5 - $scope.trail.rating);
+  $scope.nostars = () => [1];
 
-  $scope.difficulty = () => _.range($scope.trail.difficulty);
+  $scope.difficulty = () => [1, 2, 3];
 
   $scope.exampleTrail = {
     name: 'My first trail',

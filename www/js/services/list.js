@@ -1,6 +1,3 @@
-/* global UUIDjs */
-/* global TransitionType */
-/* global localStorage */
 /* eslint no-underscore-dangle: ["error", { "allow": ["_geofences", "_geofencesPromise"] }] */
 angular.module('breadcrumb').factory('ListFact', function () {
   const filterListItems = (list, type, value) => {
