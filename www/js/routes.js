@@ -15,7 +15,6 @@ angular.module('breadcrumb').config(function ($stateProvider, $urlRouterProvider
       abstract: true,
       templateUrl: 'views/menu.html',
       controller: 'AppCtrl',
-      authenticate: true,
     })
     .state('app.dashboard', {
       url: '/dashboard',
