@@ -8,12 +8,16 @@ angular.module('breadcrumb')
       },
       standalone: true,
       autoclose: true,
-      container: 'widget'
+      rememberLastLogin: false,
+      allowSignUp: false,
+      // container: 'widget'
     }, (profile, idToken, accessToken, state, refreshToken) => {
       store.set('profile', profile);
       store.set('token', idToken);
       store.set('refreshToken', refreshToken);
-      console.log(profile);
+      for (let k in profile) {
+        console.log(k+': ' + profile[k]);
+      }
       $state.go('app.dashboard');
     }, (error) => {
       console.warn('There was an error logging in', error);
@@ -26,11 +30,11 @@ angular.module('breadcrumb')
 
   $scope.doAuth();
 
-  $scope.logout = () => {
-    auth.signout();
-    store.remove('token');
-    store.remove('profile');
-    store.remove('refreshToken');
-    $state.go('app.dashboard', {}, { reload: true });
-  };
+  // $scope.logout = () => {
+  //   auth.signout();
+  //   store.remove('token');
+  //   store.remove('profile');
+  //   store.remove('refreshToken');
+  //   $state.go('app.dashboard', {}, { reload: true });
+  // };
 });

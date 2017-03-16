@@ -81,6 +81,7 @@ angular.module('breadcrumb', [
     });
 
     $rootScope.$on('$locationChangeStart', () => {
+      console.log('locationchangestart');
       if (!auth.isAuthenticated) {
         const token = store.get('token');
         if (token) {
@@ -90,8 +91,16 @@ angular.module('breadcrumb', [
     });
   });
 })
-.controller('AppCtrl', function ($scope) {
-  // $scope.scope = null;
+.controller('AppCtrl', function ($scope, auth, store, $state) {
+  $scope.logout = () => {
+    console.log('I GOT CAAAALLLLEEEDDDDD SIIIIGGGNNNNOOOUUUTTTT');
+    auth.signout();
+    store.remove('token');
+    store.remove('profile');
+    store.remove('refreshToken');
+    $state.go('start', {}, { reload: true });
+  };
+
   $scope.test = (input) => {
     console.warn(input);
   };

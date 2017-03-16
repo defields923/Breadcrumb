@@ -37,6 +37,9 @@ angular.module('breadcrumb')
             controller: 'ListCtrl',
           },
         },
+        data: {
+          requiresLogin: true,
+        },
       })
       .state('app.create', {
         url: '/create',
@@ -45,6 +48,9 @@ angular.module('breadcrumb')
             templateUrl: 'views/create.html',
             controller: 'CreateTrailCtrl',
           },
+        },
+        data: {
+          requiresLogin: true,
         },
       })
       .state('app.profile', {
@@ -55,6 +61,9 @@ angular.module('breadcrumb')
             controller: 'ProfileCtrl',
           },
         },
+        data: {
+          requiresLogin: true,
+        },
       })
       .state('app.settings', {
         url: '/settings',
@@ -64,6 +73,9 @@ angular.module('breadcrumb')
             controller: 'AuthCtrl',
           },
         },
+        data: {
+          requiresLogin: true,
+        },
       })
       .state('app.geofences', {
         url: '/geofences',
@@ -72,6 +84,9 @@ angular.module('breadcrumb')
             templateUrl: 'views/geofence/geofences.html',
             controller: 'GeofencesCtrl',
           },
+        },
+        data: {
+          requiresLogin: true,
         },
       })
       .state('app.geofence-new', {
@@ -89,6 +104,9 @@ angular.module('breadcrumb')
               latitude: parseFloat($stateParams.latitude),
             });
           },
+        },
+        data: {
+          requiresLogin: true,
         },
       })
       .state('app.geofence-edit', {
@@ -124,7 +142,6 @@ angular.module('breadcrumb')
     authProvider.init({
       domain: 'defields923.auth0.com',
       clientID: 'WjzyvWzAQ8jN72gc0NR6pWBEG8gWM2Wn',
-      callbackURL: location.href,
       loginState: 'login',
     });
 

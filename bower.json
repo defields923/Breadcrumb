@@ -8,10 +8,9 @@
     "collide": "^0.0.4",
     "underscore": "^1.8.3",
     "ngCordova": "^0.1.27-alpha",
-    "auth0-lock": "9.2.2",
-    "angular-lock": "^1.0.5",
     "angular-jwt": "^0.1.9",
     "a0-angular-storage": "^0.0.15",
-    "auth0-angular": "^4.2.7"
+    "auth0-angular": "^4.2.7",
+    "auth0-lock": "^10.13.0"
   }
 }
