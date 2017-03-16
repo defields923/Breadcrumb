@@ -6,6 +6,12 @@
     "leaflet": "~0.7.3",
     "ionic-ion-tinder-cards": "ionic-contrib-tinder-cards#*",
     "collide": "^0.0.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "ngCordova": "^0.1.27-alpha",
+    "auth0-lock": "9.2.2",
+    "angular-lock": "^1.0.5",
+    "angular-jwt": "^0.1.9",
+    "a0-angular-storage": "^0.0.15",
+    "auth0-angular": "^4.2.7"
   }
 }

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.tsubik.ionicgeofence" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Ionic Geofence</name>
+<widget id="com.realdeal.breadcrumb" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Breadcrumb</name>
   <description>
-    Geofence Sample Application Built With Ionic
+    Thesis
   </description>
-  <author email="tsubik@gmail.com" href="http://tsubik.com/">
-    Tomasz Subik
+  <author email="" href="">
+    realDEAL
   </author>
   <content src="index.html"/>
+  <access origin="*"/>
   <access origin="*.openstreetmap.org"/>
+  <access origin="http://*.google.com"/>
+  <access origin="https://cdn.auth0.com/"/>
+  <access origin="http://cdn.auth0.com/styleguide/4.6.1/lib/logos/img/badge.png"/>
+  <access origin="https://defields923.auth0.com/user/ssodata"/>
+  <access origin="https://*.microsoft.com"/>
+  <access origin="http://172.24.2.41:5000/picture/labels" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -23,6 +30,10 @@
   <preference name="UseLegacySwiftLanguageVersion" value="true"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
+  </feature>
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
   </feature>
   <platform name="android">
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png"/>
@@ -81,5 +92,6 @@
   <plugin name="cordova-plugin-geolocation" spec="~2.1.0"/>
   <plugin name="cordova-plugin-console" spec="~1.0.2"/>
   <plugin name="cordova-plugin-splashscreen" spec="~3.2.2"/>
+  <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0"/>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
 </widget>
