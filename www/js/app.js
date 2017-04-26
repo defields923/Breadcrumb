@@ -88,6 +88,11 @@ angular.module('breadcrumb', [
     }
   });
 })
+.value('images', {
+  load: (() => Math.floor(Math.random() * 2))(),
+  child1: (() => Math.floor(Math.random() * 8))(),
+  child2: (() => Math.floor(Math.random() * 8))(),
+})
 .controller('AppCtrl', function (
   $scope,
   $rootScope,
@@ -96,7 +101,8 @@ angular.module('breadcrumb', [
   $state,
   Data,
   Style,
-  $http
+  $http,
+  images
 ) {
   $scope.logout = () => {
     const user = store.get('user').username;
@@ -117,7 +123,7 @@ angular.module('breadcrumb', [
     }).catch((err) => { console.error(err); });
   };
 
-  $scope.load = () => Data.load();
+  $scope.load = Data.load(images.load);
 
   // $scope.$on('$ionicView.beforeEnter', () => {
   //   $scope.user = store.get('user').username;
@@ -137,8 +143,8 @@ angular.module('breadcrumb', [
 
   $scope.theme = Style.theme();
 
-  $scope.child1 = Data.child();
-  $scope.child2 = Data.child();
+  $scope.child1 = Data.child(images.child1);
+  $scope.child2 = Data.child(images.child2);
 
   $scope.overflowStyle = Style.overflowStyle;
 

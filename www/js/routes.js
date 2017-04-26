@@ -54,6 +54,7 @@ angular.module('breadcrumb')
             controller: 'TrailCtrl',
           },
         },
+        cache: false,
       })
       .state('app.create', {
         url: '/create',
@@ -63,6 +64,7 @@ angular.module('breadcrumb')
             controller: 'CreateTrailCtrl',
           },
         },
+        cache: false,
       })
       .state('app.search', {
         url: '/search',

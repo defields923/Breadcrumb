@@ -62,11 +62,11 @@ angular.module('breadcrumb')
     $scope.loading = Style.displayNone;
   };
 
-  // $scope.trailsCache = ListFact.get().then((trails) => {
-  //   $scope.trails = ListFact.filter(trails, 'name');
-  //   $scope.loading = Style.displayNone;
-  //   $scope.trailsCache = ListFact.filter(trails, 'name');
-  // });
+  $scope.trailsCache = ListFact.get().then((trails) => {
+    $scope.trails = ListFact.filter(trails, 'name');
+    $scope.loading = Style.displayNone;
+    $scope.trailsCache = ListFact.filter(trails, 'name');
+  });
 
   $scope.trailsCache = null;
 

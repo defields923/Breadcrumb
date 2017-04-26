@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <ion-view ng-style="{background: 'transparent'}">
   <div class="loading center" ng-style="loading">
-    <img class="center" style="margin-top: 50%" ng-src="{{ load() }}" alt="">
+    <img class="center" style="margin-top: 50%" ng-src="{{ load }}" alt="">
   </div>
   <div class="black"  ng-if="leaving" ng-click="leave()"></div>
   <div class="full">
@@ -96,7 +96,7 @@
             <!-- <br>{{ crumbs[crumb].name }}! -->
           </h2>
 
-          <div class="full float float22">
+          <div class="full">
             <img class="rotate-small" ng-if="!page.media.show" ng-src="http://res.cloudinary.com/realdeal/image/upload/v1490891679/found.gif" alt="">
           </div>
           <h4 ng-if="!page.media.show">Check out its cool content!</h4>

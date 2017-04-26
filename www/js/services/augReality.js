@@ -1,4 +1,4 @@
-angular.module('breadcrumb').factory('AugRealFact', function ($http, store) {
+angular.module('breadcrumb').factory('AugRealFact', function ($http, store, $rootScope) {
   let messages = [
     { username: 'broHeim', message: 'sup bro', bearing: 130 },
     { username: 'Munch', message: 'hey man', bearing: 39 },
@@ -65,7 +65,7 @@ angular.module('breadcrumb').factory('AugRealFact', function ($http, store) {
     const accToken = store.get('access_token');
     const crumbId = store.get('geofences')[0].id;
     $http({
-      url: 'http://54.203.104.113/ar_messages',
+      url: `${$rootScope.IP}/ar_messages`,
       method: 'GET',
       params: {
         access_token: accToken,

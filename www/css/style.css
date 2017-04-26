@@ -66,9 +66,9 @@ i {
 .rotate-small {
   position: relative;
   width: 200px;
-  animation: spin-clock 3s linear infinite;
+  /*animation: spin-clock 3s linear infinite;
   -moz-animation: spin-clock 3s linear infinite;
-  -webkit-animation: spin-clock 3s linear infinite;
+  -webkit-animation: spin-clock 3s linear infinite;*/
 }
 
 .stars {
